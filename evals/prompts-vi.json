@@ -1,0 +1,586 @@
+{
+  "description": "Câu lệnh tiếng Việt để kiểm tra skill có kích hoạt đúng không. Cách dùng: bật toàn bộ skill, gửi từng câu trong một cuộc trò chuyện mới, ghi lại skill nào được dùng; so với expected_skill. Một câu có thể hợp lệ kích hoạt thêm skill liên quan.",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "id": "product-marketing-1",
+      "prompt": "Giúp tôi lập hồ sơ marketing cho tiệm bánh của tôi ở Đà Nẵng: khách là ai, điểm khác biệt, giọng thương hiệu.",
+      "expected_skill": "product-marketing"
+    },
+    {
+      "id": "product-marketing-2",
+      "prompt": "Bên mình bán phần mềm quản lý kho cho SME, cần viết rõ định vị và khách hàng mục tiêu trước khi làm marketing.",
+      "expected_skill": "product-marketing"
+    },
+    {
+      "id": "marketing-plan-1",
+      "prompt": "Lập kế hoạch marketing 6 tháng cho thương hiệu mỹ phẩm thuần chay mới, ngân sách 300 triệu.",
+      "expected_skill": "marketing-plan"
+    },
+    {
+      "id": "marketing-plan-2",
+      "prompt": "Tôi cần kế hoạch marketing năm 2027 cho chuỗi 3 phòng khám nha khoa, chia theo quý và kênh.",
+      "expected_skill": "marketing-plan"
+    },
+    {
+      "id": "customer-research-1",
+      "prompt": "Tôi có 200 đánh giá trên Shopee của shop, phân tích giúp khách khen chê gì và dùng từ ngữ thế nào.",
+      "expected_skill": "customer-research"
+    },
+    {
+      "id": "customer-research-2",
+      "prompt": "Soạn bộ câu hỏi phỏng vấn 10 khách hàng cũ để hiểu vì sao họ chọn trung tâm tiếng Anh của tôi.",
+      "expected_skill": "customer-research"
+    },
+    {
+      "id": "competitor-profiling-1",
+      "prompt": "Lập hồ sơ 3 đối thủ chính của tôi trong ngành nội thất văn phòng: giá, định vị, kênh, điểm mạnh yếu.",
+      "expected_skill": "competitor-profiling"
+    },
+    {
+      "id": "competitor-profiling-2",
+      "prompt": "Phân tích đối thủ đang bán cùng mẫu nồi chiên không dầu trên Shopee và TikTok Shop.",
+      "expected_skill": "competitor-profiling"
+    },
+    {
+      "id": "competitors-1",
+      "prompt": "Viết trang hướng dẫn chọn phần mềm bán hàng cho shop nhỏ, có so sánh tiêu chí mà không vi phạm luật quảng cáo.",
+      "expected_skill": "competitors"
+    },
+    {
+      "id": "competitors-2",
+      "prompt": "Tôi muốn làm trang so sánh sản phẩm của mình với đối thủ X, ở Việt Nam có được không và nên làm thế nào?",
+      "expected_skill": "competitors"
+    },
+    {
+      "id": "reverse-engineer-marketing-1",
+      "prompt": "Đối thủ của tôi tăng trưởng rất nhanh trong 1 năm qua, giải mã giúp họ đã làm gì và tôi nên học gì.",
+      "expected_skill": "reverse-engineer-marketing"
+    },
+    {
+      "id": "reverse-engineer-marketing-2",
+      "prompt": "Phân tích xem thương hiệu trà sữa kia đã dùng những kênh nào để mở rộng, theo dòng thời gian.",
+      "expected_skill": "reverse-engineer-marketing"
+    },
+    {
+      "id": "marketing-ideas-1",
+      "prompt": "Shop thời trang online của tôi ít vốn, gợi ý 5 ý tưởng marketing có thể làm ngay tháng này.",
+      "expected_skill": "marketing-ideas"
+    },
+    {
+      "id": "marketing-ideas-2",
+      "prompt": "Cho tôi ý tưởng thu hút khách mới cho quán cà phê trong hẻm, gần như không có ngân sách.",
+      "expected_skill": "marketing-ideas"
+    },
+    {
+      "id": "marketing-council-1",
+      "prompt": "Nếu Seth Godin, Byron Sharp và Alex Hormozi góp ý chiến lược ra mắt sản phẩm của tôi thì họ sẽ nói gì?",
+      "expected_skill": "marketing-council"
+    },
+    {
+      "id": "marketing-council-2",
+      "prompt": "Mở hội đồng cố vấn để tranh luận: nên giảm giá sâu dịp 11/11 hay giữ giá và tặng quà?",
+      "expected_skill": "marketing-council"
+    },
+    {
+      "id": "marketing-psychology-1",
+      "prompt": "Vì sao khách thích đơn freeship hơn đơn rẻ hơn? Áp dụng tâm lý này cho shop thế nào cho đúng luật?",
+      "expected_skill": "marketing-psychology"
+    },
+    {
+      "id": "marketing-psychology-2",
+      "prompt": "Giải thích hiệu ứng mỏ neo và cách dùng trên bảng giá 3 gói dịch vụ spa của tôi.",
+      "expected_skill": "marketing-psychology"
+    },
+    {
+      "id": "marketing-loops-1",
+      "prompt": "Thiết lập việc kiểm tra hằng tuần để AI theo dõi đánh giá xấu trên Shopee và soạn sẵn câu trả lời.",
+      "expected_skill": "marketing-loops"
+    },
+    {
+      "id": "marketing-loops-2",
+      "prompt": "Tôi muốn mỗi sáng thứ Hai có báo cáo marketing tự động từ số liệu quảng cáo và đơn hàng, làm thế nào?",
+      "expected_skill": "marketing-loops"
+    },
+    {
+      "id": "marketplaces-1",
+      "prompt": "Tối ưu gian hàng Shopee của tôi: tiêu đề, ảnh, giá, chương trình của sàn, để tăng đơn tháng tới.",
+      "expected_skill": "marketplaces"
+    },
+    {
+      "id": "marketplaces-2",
+      "prompt": "Nên bán trên Shopee hay TikTok Shop cho sản phẩm đồ gia dụng giá 200–500 nghìn?",
+      "expected_skill": "marketplaces"
+    },
+    {
+      "id": "livestream-1",
+      "prompt": "Viết kịch bản livestream 2 tiếng bán mỹ phẩm trên TikTok Shop tối thứ Sáu.",
+      "expected_skill": "livestream"
+    },
+    {
+      "id": "livestream-2",
+      "prompt": "Livestream của shop tôi ít người xem và ít đơn, kiểm tra giúp nên sửa gì.",
+      "expected_skill": "livestream"
+    },
+    {
+      "id": "chat-selling-1",
+      "prompt": "Soạn bộ câu trả lời mẫu cho nhân viên chốt đơn qua Messenger khi khách hỏi giá rồi im lặng.",
+      "expected_skill": "chat-selling"
+    },
+    {
+      "id": "chat-selling-2",
+      "prompt": "Khách nhắn Zalo hỏi nhiều mà ít chốt, giúp tôi xây quy trình tư vấn và chốt đơn qua tin nhắn.",
+      "expected_skill": "chat-selling"
+    },
+    {
+      "id": "zalo-1",
+      "prompt": "Hướng dẫn tôi dùng Zalo OA để chăm sóc khách sau mua mà không bị coi là spam.",
+      "expected_skill": "zalo"
+    },
+    {
+      "id": "zalo-2",
+      "prompt": "Soạn mẫu tin ZNS nhắc lịch hẹn và tin nhắn mời khách theo dõi OA cho phòng khám.",
+      "expected_skill": "zalo"
+    },
+    {
+      "id": "local-marketing-1",
+      "prompt": "Làm sao để quán ăn của tôi lên top Google Maps khu vực Cầu Giấy?",
+      "expected_skill": "local-marketing"
+    },
+    {
+      "id": "local-marketing-2",
+      "prompt": "Lập chương trình khách hàng thân thiết đơn giản cho tiệm cắt tóc nam.",
+      "expected_skill": "local-marketing"
+    },
+    {
+      "id": "copywriting-1",
+      "prompt": "Viết nội dung trang đích cho khóa học Excel online, khách là nhân viên văn phòng.",
+      "expected_skill": "copywriting"
+    },
+    {
+      "id": "copywriting-2",
+      "prompt": "Viết lại phần giới thiệu sản phẩm nước mắm truyền thống cho website, giọng mộc mạc nhưng sang.",
+      "expected_skill": "copywriting"
+    },
+    {
+      "id": "copy-editing-1",
+      "prompt": "Biên tập giúp bài giới thiệu dịch vụ này cho gọn, bớt sáo rỗng, đúng chính tả tiếng Việt.",
+      "expected_skill": "copy-editing"
+    },
+    {
+      "id": "copy-editing-2",
+      "prompt": "Đọc lại nội dung trang bán hàng này, chỉ ra câu nào có thể vi phạm luật quảng cáo và sửa giúp.",
+      "expected_skill": "copy-editing"
+    },
+    {
+      "id": "content-strategy-1",
+      "prompt": "Lên chiến lược nội dung blog 3 tháng cho công ty dịch vụ kế toán để có khách từ Google.",
+      "expected_skill": "content-strategy"
+    },
+    {
+      "id": "content-strategy-2",
+      "prompt": "Chúng tôi nên viết về chủ đề gì để fanpage và website hút khách mua máy lọc nước?",
+      "expected_skill": "content-strategy"
+    },
+    {
+      "id": "social-1",
+      "prompt": "Lên lịch đăng TikTok và Facebook 1 tháng cho shop đồ ăn vặt.",
+      "expected_skill": "social"
+    },
+    {
+      "id": "social-2",
+      "prompt": "Viết 10 câu mở đầu video ngắn cho dịch vụ dọn nhà trọn gói.",
+      "expected_skill": "social"
+    },
+    {
+      "id": "image-1",
+      "prompt": "Làm ảnh sản phẩm cho Shopee thế nào cho đẹp mà vẫn đúng thực tế?",
+      "expected_skill": "image"
+    },
+    {
+      "id": "image-2",
+      "prompt": "Tạo ảnh đầu bài blog và ảnh chia sẻ Facebook cho bài viết về thuế hộ kinh doanh.",
+      "expected_skill": "image"
+    },
+    {
+      "id": "video-1",
+      "prompt": "Tôi muốn làm video demo phần mềm bằng AI có giọng đọc tiếng Việt, nên dùng công cụ gì?",
+      "expected_skill": "video"
+    },
+    {
+      "id": "video-2",
+      "prompt": "Cắt buổi livestream 2 tiếng thành các clip ngắn đăng TikTok thế nào cho hiệu quả?",
+      "expected_skill": "video"
+    },
+    {
+      "id": "influencer-marketing-1",
+      "prompt": "Tìm và chọn KOC phù hợp cho thương hiệu sữa hạt, trả bao nhiêu là hợp lý?",
+      "expected_skill": "influencer-marketing"
+    },
+    {
+      "id": "influencer-marketing-2",
+      "prompt": "Soạn hợp đồng và brief cho KOL quảng cáo kem chống nắng, cần lưu ý gì theo Luật Quảng cáo mới?",
+      "expected_skill": "influencer-marketing"
+    },
+    {
+      "id": "community-marketing-1",
+      "prompt": "Xây nhóm Facebook cho cộng đồng mẹ bỉm quanh thương hiệu tã của tôi như thế nào?",
+      "expected_skill": "community-marketing"
+    },
+    {
+      "id": "community-marketing-2",
+      "prompt": "Nhóm Zalo khách VIP của tôi rất im ắng, làm sao cho sôi nổi lại?",
+      "expected_skill": "community-marketing"
+    },
+    {
+      "id": "public-relations-1",
+      "prompt": "Viết thông cáo báo chí về việc công ty tôi gọi vốn thành công.",
+      "expected_skill": "public-relations"
+    },
+    {
+      "id": "public-relations-2",
+      "prompt": "Có khách tố sản phẩm của tôi trên mạng xã hội và đang lan rộng, xử lý khủng hoảng thế nào?",
+      "expected_skill": "public-relations"
+    },
+    {
+      "id": "seo-audit-1",
+      "prompt": "Kiểm tra SEO website bán đồ gỗ của tôi, vì sao traffic từ Google giảm 3 tháng nay?",
+      "expected_skill": "seo-audit"
+    },
+    {
+      "id": "seo-audit-2",
+      "prompt": "Audit SEO kỹ thuật cho trang thương mại điện tử 5.000 sản phẩm.",
+      "expected_skill": "seo-audit"
+    },
+    {
+      "id": "ai-seo-1",
+      "prompt": "Làm sao để ChatGPT và Gemini nhắc tới thương hiệu của tôi khi người ta hỏi về dịch vụ kế toán ở TP.HCM?",
+      "expected_skill": "ai-seo"
+    },
+    {
+      "id": "ai-seo-2",
+      "prompt": "Kiểm tra xem website của tôi có được AI trích dẫn không và cần sửa gì.",
+      "expected_skill": "ai-seo"
+    },
+    {
+      "id": "site-architecture-1",
+      "prompt": "Thiết kế cấu trúc menu và URL cho website bán thiết bị điện gia dụng mới.",
+      "expected_skill": "site-architecture"
+    },
+    {
+      "id": "site-architecture-2",
+      "prompt": "Website dịch vụ của tôi có 200 trang lộn xộn, sắp xếp lại cấu trúc giúp.",
+      "expected_skill": "site-architecture"
+    },
+    {
+      "id": "programmatic-seo-1",
+      "prompt": "Tạo hàng loạt trang 'dịch vụ sửa điều hòa tại [quận]' mà không bị coi là nội dung rác.",
+      "expected_skill": "programmatic-seo"
+    },
+    {
+      "id": "programmatic-seo-2",
+      "prompt": "Làm trang so sánh giá vé theo tuyến xe tự động từ dữ liệu có sẵn.",
+      "expected_skill": "programmatic-seo"
+    },
+    {
+      "id": "schema-1",
+      "prompt": "Thêm dữ liệu có cấu trúc cho trang sản phẩm và trang câu hỏi thường gặp.",
+      "expected_skill": "schema"
+    },
+    {
+      "id": "schema-2",
+      "prompt": "Viết JSON-LD LocalBusiness cho chuỗi 5 cửa hàng của tôi.",
+      "expected_skill": "schema"
+    },
+    {
+      "id": "link-building-1",
+      "prompt": "Kiếm backlink chất lượng cho website du lịch của tôi bằng cách nào?",
+      "expected_skill": "link-building"
+    },
+    {
+      "id": "link-building-2",
+      "prompt": "Lên kế hoạch xây dựng liên kết 3 tháng cho trang phần mềm nhân sự.",
+      "expected_skill": "link-building"
+    },
+    {
+      "id": "directory-submissions-1",
+      "prompt": "Đăng doanh nghiệp lên Google Business Profile và các danh bạ nào thì có ích?",
+      "expected_skill": "directory-submissions"
+    },
+    {
+      "id": "directory-submissions-2",
+      "prompt": "Chuẩn bị ra mắt app trên Product Hunt và các danh bạ AI, lên kế hoạch giúp.",
+      "expected_skill": "directory-submissions"
+    },
+    {
+      "id": "aso-1",
+      "prompt": "Tối ưu trang ứng dụng trên App Store và Google Play cho app đặt lịch spa.",
+      "expected_skill": "aso"
+    },
+    {
+      "id": "aso-2",
+      "prompt": "Viết tiêu đề, mô tả, từ khóa cho app học tiếng Anh trên CH Play.",
+      "expected_skill": "aso"
+    },
+    {
+      "id": "ads-1",
+      "prompt": "Chia ngân sách 50 triệu/tháng giữa Facebook, TikTok và Google Ads cho shop giày.",
+      "expected_skill": "ads"
+    },
+    {
+      "id": "ads-2",
+      "prompt": "Chiến dịch Facebook Ads của tôi giá mỗi đơn tăng gấp đôi, kiểm tra giúp nguyên nhân.",
+      "expected_skill": "ads"
+    },
+    {
+      "id": "ad-creative-1",
+      "prompt": "Viết 10 mẫu nội dung quảng cáo Facebook cho khóa học làm bánh online.",
+      "expected_skill": "ad-creative"
+    },
+    {
+      "id": "ad-creative-2",
+      "prompt": "Lên ý tưởng video quảng cáo TikTok 15 giây cho sản phẩm máy hút bụi cầm tay.",
+      "expected_skill": "ad-creative"
+    },
+    {
+      "id": "cro-1",
+      "prompt": "Trang đích của tôi nhiều người vào nhưng ít điền form, tối ưu giúp.",
+      "expected_skill": "cro"
+    },
+    {
+      "id": "cro-2",
+      "prompt": "Kiểm tra trang sản phẩm này xem vì sao khách thêm giỏ nhưng không đặt hàng.",
+      "expected_skill": "cro"
+    },
+    {
+      "id": "signup-1",
+      "prompt": "Rút gọn form đăng ký dùng thử phần mềm của tôi để nhiều người đăng ký hơn.",
+      "expected_skill": "signup"
+    },
+    {
+      "id": "signup-2",
+      "prompt": "Nên cho đăng ký bằng số điện thoại, Zalo hay email với app của tôi?",
+      "expected_skill": "signup"
+    },
+    {
+      "id": "onboarding-1",
+      "prompt": "Thiết kế các bước hướng dẫn người dùng mới trong app quản lý bán hàng để họ dùng thật.",
+      "expected_skill": "onboarding"
+    },
+    {
+      "id": "onboarding-2",
+      "prompt": "Nhiều người đăng ký xong không quay lại, cải thiện onboarding thế nào?",
+      "expected_skill": "onboarding"
+    },
+    {
+      "id": "popups-1",
+      "prompt": "Thiết kế cửa sổ bật lên thu số điện thoại khách trên website mỹ phẩm mà không gây khó chịu.",
+      "expected_skill": "popups"
+    },
+    {
+      "id": "popups-2",
+      "prompt": "Popup giảm giá khi khách sắp thoát trang có nên dùng không?",
+      "expected_skill": "popups"
+    },
+    {
+      "id": "paywalls-1",
+      "prompt": "Thiết kế màn hình nâng cấp gói trả phí trong app học tập.",
+      "expected_skill": "paywalls"
+    },
+    {
+      "id": "paywalls-2",
+      "prompt": "Người dùng gói miễn phí hết hạn mức, nên hiện thông báo nâng cấp thế nào?",
+      "expected_skill": "paywalls"
+    },
+    {
+      "id": "ab-testing-1",
+      "prompt": "Website tôi 3.000 lượt truy cập/tháng, có đủ để chạy thử nghiệm A/B không?",
+      "expected_skill": "ab-testing"
+    },
+    {
+      "id": "ab-testing-2",
+      "prompt": "Đọc giúp kết quả thử nghiệm hai tiêu đề trang đích này, đã kết luận được chưa?",
+      "expected_skill": "ab-testing"
+    },
+    {
+      "id": "pricing-1",
+      "prompt": "Định giá gói dịch vụ chăm sóc fanpage cho khách doanh nghiệp nhỏ.",
+      "expected_skill": "pricing"
+    },
+    {
+      "id": "pricing-2",
+      "prompt": "Tôi định tăng giá phần mềm 20%, thông báo cho khách cũ thế nào?",
+      "expected_skill": "pricing"
+    },
+    {
+      "id": "offers-1",
+      "prompt": "Thiết kế ưu đãi hấp dẫn cho khóa học online mà không phải giảm giá sâu.",
+      "expected_skill": "offers"
+    },
+    {
+      "id": "offers-2",
+      "prompt": "Lên combo và quà tặng cho dịp 8/3 cho cửa hàng hoa.",
+      "expected_skill": "offers"
+    },
+    {
+      "id": "launch-1",
+      "prompt": "Lên kế hoạch ra mắt bộ sưu tập thời trang Tết.",
+      "expected_skill": "launch"
+    },
+    {
+      "id": "launch-2",
+      "prompt": "Chuẩn bị ra mắt tính năng mới cho phần mềm, cần checklist và lịch truyền thông.",
+      "expected_skill": "launch"
+    },
+    {
+      "id": "lead-magnets-1",
+      "prompt": "Tạo tài liệu tặng miễn phí để thu số điện thoại khách quan tâm dịch vụ thiết kế nhà.",
+      "expected_skill": "lead-magnets"
+    },
+    {
+      "id": "lead-magnets-2",
+      "prompt": "Gợi ý quà tặng thu khách tiềm năng cho trung tâm luyện thi IELTS.",
+      "expected_skill": "lead-magnets"
+    },
+    {
+      "id": "free-tools-1",
+      "prompt": "Tôi muốn làm công cụ tính chi phí lắp điện mặt trời trên website để có khách, có đáng làm không?",
+      "expected_skill": "free-tools"
+    },
+    {
+      "id": "free-tools-2",
+      "prompt": "Gợi ý công cụ miễn phí nào giúp công ty kế toán của tôi thu khách.",
+      "expected_skill": "free-tools"
+    },
+    {
+      "id": "referrals-1",
+      "prompt": "Thiết kế chương trình khách giới thiệu khách cho spa, thưởng thế nào cho hợp lý?",
+      "expected_skill": "referrals"
+    },
+    {
+      "id": "referrals-2",
+      "prompt": "Làm chương trình cộng tác viên bán hàng hưởng hoa hồng, làm sao để không bị coi là đa cấp?",
+      "expected_skill": "referrals"
+    },
+    {
+      "id": "co-marketing-1",
+      "prompt": "Tìm đối tác để làm chương trình voucher chéo cho phòng gym của tôi.",
+      "expected_skill": "co-marketing"
+    },
+    {
+      "id": "co-marketing-2",
+      "prompt": "Lên kế hoạch collab giữa thương hiệu cà phê và thương hiệu bánh của tôi.",
+      "expected_skill": "co-marketing"
+    },
+    {
+      "id": "events-1",
+      "prompt": "Tổ chức webinar miễn phí để thu khách cho dịch vụ tư vấn thuế, làm sao để nhiều người tham dự thật?",
+      "expected_skill": "events"
+    },
+    {
+      "id": "events-2",
+      "prompt": "Có nên thuê gian hàng ở hội chợ triển lãm ngành xây dựng không, làm sao đo hiệu quả?",
+      "expected_skill": "events"
+    },
+    {
+      "id": "emails-1",
+      "prompt": "Viết chuỗi email chào mừng 5 email cho người đăng ký nhận bản tin của shop.",
+      "expected_skill": "emails"
+    },
+    {
+      "id": "emails-2",
+      "prompt": "Lên chuỗi email nhắc khách bỏ giỏ hàng cho website bán đồ điện tử.",
+      "expected_skill": "emails"
+    },
+    {
+      "id": "sms-1",
+      "prompt": "Soạn tin nhắn SMS khuyến mãi dịp 12/12 đúng quy định Nghị định 91.",
+      "expected_skill": "sms"
+    },
+    {
+      "id": "sms-2",
+      "prompt": "Có nên dùng SMS brandname để nhắc khách quay lại mua không, chi phí và lưu ý?",
+      "expected_skill": "sms"
+    },
+    {
+      "id": "churn-prevention-1",
+      "prompt": "Khách gia hạn gói phần mềm ngày càng ít, làm sao giữ chân?",
+      "expected_skill": "churn-prevention"
+    },
+    {
+      "id": "churn-prevention-2",
+      "prompt": "Phân nhóm khách cũ của shop mỹ phẩm để nhắc mua lại đúng lúc.",
+      "expected_skill": "churn-prevention"
+    },
+    {
+      "id": "prospecting-1",
+      "prompt": "Lập danh sách 25 công ty sản xuất ở Bình Dương có thể cần phần mềm quản lý kho, có chấm điểm.",
+      "expected_skill": "prospecting"
+    },
+    {
+      "id": "prospecting-2",
+      "prompt": "Tìm khách hàng tiềm năng B2B cho dịch vụ vệ sinh công nghiệp ở Hà Nội mà không mua data.",
+      "expected_skill": "prospecting"
+    },
+    {
+      "id": "cold-email-1",
+      "prompt": "Viết email tiếp cận giám đốc nhân sự để giới thiệu dịch vụ tuyển dụng của tôi.",
+      "expected_skill": "cold-email"
+    },
+    {
+      "id": "cold-email-2",
+      "prompt": "Email chào hàng của tôi không ai trả lời, sửa giúp và lên chuỗi nhắc lại.",
+      "expected_skill": "cold-email"
+    },
+    {
+      "id": "sales-enablement-1",
+      "prompt": "Soạn hồ sơ năng lực công ty xây dựng của tôi để gửi chủ đầu tư.",
+      "expected_skill": "sales-enablement"
+    },
+    {
+      "id": "sales-enablement-2",
+      "prompt": "Khách nói bên kia rẻ hơn một nửa, tôi trả lời thế nào trong cuộc gọi chiều nay?",
+      "expected_skill": "sales-enablement"
+    },
+    {
+      "id": "revops-1",
+      "prompt": "Thiết kế quy trình quản lý lead từ Facebook, Zalo, hotline vào một CRM.",
+      "expected_skill": "revops"
+    },
+    {
+      "id": "revops-2",
+      "prompt": "Marketing và sales bên tôi cãi nhau về chất lượng lead, định nghĩa MQL và SQL giúp.",
+      "expected_skill": "revops"
+    },
+    {
+      "id": "analytics-1",
+      "prompt": "Cài đặt đo lường GA4 để biết khách bấm gọi và bấm Zalo trên website.",
+      "expected_skill": "analytics"
+    },
+    {
+      "id": "analytics-2",
+      "prompt": "Đặt UTM thống nhất cho các chiến dịch Facebook, Zalo, KOC của công ty.",
+      "expected_skill": "analytics"
+    },
+    {
+      "id": "conversion-tracking-1",
+      "prompt": "Pixel Facebook ghi nhận đơn gấp đôi thực tế, kiểm tra giúp vì sao.",
+      "expected_skill": "conversion-tracking"
+    },
+    {
+      "id": "conversion-tracking-2",
+      "prompt": "Thiết lập Conversions API của Meta và chuyển đổi nâng cao Google Ads cho website Haravan.",
+      "expected_skill": "conversion-tracking"
+    },
+    {
+      "id": "attribution-1",
+      "prompt": "Facebook báo 300 đơn, Google báo 200, hệ thống chỉ có 350 đơn, tin số nào?",
+      "expected_skill": "attribution"
+    },
+    {
+      "id": "attribution-2",
+      "prompt": "Khách xem TikTok rồi mua trên Shopee, đo hiệu quả kênh TikTok thế nào?",
+      "expected_skill": "attribution"
+    }
+  ]
+}
